@@ -1,0 +1,7 @@
+FROM golang
+
+RUN echo "[url \"git@github.com:\"]\n\tinsteadOf = https://github.com/" >> /root/.gitconfig
+
+WORKDIR /workspace/go/tic-tac-toe-api
+
+CMD [ "go", "run", "." ]

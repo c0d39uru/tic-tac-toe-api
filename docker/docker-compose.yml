@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+  golang:
+    build: .
+    container_name: tic-tac-toe-api-container
+    image: tic-tac-toe-api-image
+    ports: 
+      - target: 80
+        published: 8080
+        protocol: tcp
+        mode: host
+    volumes: 
+      -  ~/workspace/go/src/github.com/cleancode4ever/tic-tac-toe-api:/workspace/go/tic-tac-toe-api
+      - ~/.ssh:/root/.ssh
+    networks:
+      - go-app
+
+networks:
+  go-app:
+    name: tic-tac-toe-api-network
