@@ -11,7 +11,7 @@ services:
         protocol: tcp
         mode: host
     volumes: 
-      -  ~/workspace/go/src/github.com/cleancode4ever/tic-tac-toe-api:/workspace/go/tic-tac-toe-api
+      -  ./..:/workspace/go/tic-tac-toe-api
       - ~/.ssh:/root/.ssh
     networks:
       - go-app
